@@ -22,6 +22,7 @@ Rails.application.configure do
   # Assume SSL behind Render reverse proxy
   config.assume_ssl = true
   config.hosts << /.*\.onrender\.com/
+  config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
 
   # Store uploaded files on the local file system (see config/storage.yml for options).

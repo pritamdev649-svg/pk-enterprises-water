@@ -5,6 +5,7 @@ services:
     plan: free
     region: oregon
     dockerfilePath: ./Dockerfile
+    healthCheckPath: /up
     envVars:
       - key: RAILS_ENV
         value: production
@@ -13,4 +14,6 @@ services:
       - key: RAILS_SERVE_STATIC_FILES
         value: "true"
       - key: PORT
-        value: "80"
+        value: "10000"
+      - key: HTTP_PORT
+        value: "10000"
