@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: pk-enterprises-water
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_MASTER_KEY
+        value: 2e533a75bb6f17a4f4f79ff11b94c564
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      - key: PORT
+        value: "80"

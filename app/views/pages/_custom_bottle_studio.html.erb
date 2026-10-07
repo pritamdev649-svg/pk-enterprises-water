@@ -1,0 +1,260 @@
+<section id="custom-studio" class="py-20 bg-slate-900 text-white relative overflow-hidden" data-controller="custom-bottle">
+  <!-- Subtle Background Gradients -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-sky-600/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest text-amber-400 uppercase bg-amber-400/10 px-3.5 py-1 rounded-full border border-amber-400/20">
+        Private-Label Studio
+      </span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Personalized Water Branding for Your Business
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        Turn every bottle into high-value marketing real estate. Design custom labeled bottles with metallic foils, transparent films, and premium caps in real-time.
+      </p>
+    </div>
+
+    <!-- Interactive Studio Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Studio Controls (Left 7 Cols) -->
+      <div class="lg:col-span-7 bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-slate-700/60 space-y-8">
+        
+        <!-- Step 1: Select Bottle Size -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-sky-400 mb-3">
+            1. Select Bottle Capacity
+          </label>
+          <div class="grid grid-cols-3 gap-3">
+            <button type="button" 
+                    data-size-button 
+                    data-size="200ml" 
+                    data-price="7.50" 
+                    data-action="click->custom-bottle#selectSize" 
+                    class="py-3 px-4 rounded-xl text-center font-bold text-xs sm:text-sm bg-white text-slate-700 transition-all hover:bg-slate-100">
+              200 ml
+              <span class="block text-[10px] font-normal text-slate-500 mt-0.5">₹7.50 / bottle</span>
+            </button>
+            <button type="button" 
+                    data-size-button 
+                    data-size="500ml" 
+                    data-price="11.50" 
+                    data-action="click->custom-bottle#selectSize" 
+                    class="py-3 px-4 rounded-xl text-center font-bold text-xs sm:text-sm bg-sky-600 text-white shadow-sm transition-all">
+              500 ml
+              <span class="block text-[10px] font-normal text-sky-200 mt-0.5">₹11.50 / bottle</span>
+            </button>
+            <button type="button" 
+                    data-size-button 
+                    data-size="1000ml" 
+                    data-price="17.00" 
+                    data-action="click->custom-bottle#selectSize" 
+                    class="py-3 px-4 rounded-xl text-center font-bold text-xs sm:text-sm bg-white text-slate-700 transition-all hover:bg-slate-100">
+              1000 ml
+              <span class="block text-[10px] font-normal text-slate-500 mt-0.5">₹17.00 / bottle</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Custom Brand Text -->
+        <div class="space-y-4">
+          <label class="block text-xs font-bold uppercase tracking-wider text-sky-400">
+            2. Brand Identity & Typography
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] text-slate-300 mb-1 font-medium">Brand / Entity Name</label>
+              <input type="text" 
+                     placeholder="e.g. TAJ PALACE / INFOSYS" 
+                     data-custom-bottle-target="nameInput"
+                     data-action="input->custom-bottle#updateBrandName"
+                     class="w-full bg-slate-900/90 text-white px-4 py-2.5 rounded-xl border border-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500 text-xs">
+            </div>
+            <div>
+              <label class="block text-[11px] text-slate-300 mb-1 font-medium">Tagline / Subtitle</label>
+              <input type="text" 
+                     placeholder="e.g. LUXURY HOSPITALITY" 
+                     data-custom-bottle-target="subtitleInput"
+                     data-action="input->custom-bottle#updateSubtitle"
+                     class="w-full bg-slate-900/90 text-white px-4 py-2.5 rounded-xl border border-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500 text-xs">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Cap Color Selector -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-sky-400 mb-3">
+            3. Choose Cap Finish
+          </label>
+          <div class="flex items-center gap-4 flex-wrap">
+            <!-- Gold -->
+            <button type="button" 
+                    data-cap-button 
+                    data-cap="gold" 
+                    data-action="click->custom-bottle#selectCap" 
+                    class="group flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 ring-4 ring-sky-400 scale-110 transition-all">
+              <span class="w-5 h-5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 shadow-xs"></span>
+              <span class="text-xs font-semibold text-slate-200">Gold</span>
+            </button>
+            <!-- Blue -->
+            <button type="button" 
+                    data-cap-button 
+                    data-cap="blue" 
+                    data-action="click->custom-bottle#selectCap" 
+                    class="group flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 transition-all">
+              <span class="w-5 h-5 rounded-full bg-sky-600 shadow-xs"></span>
+              <span class="text-xs font-semibold text-slate-200">Ocean Blue</span>
+            </button>
+            <!-- Black -->
+            <button type="button" 
+                    data-cap-button 
+                    data-cap="black" 
+                    data-action="click->custom-bottle#selectCap" 
+                    class="group flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 transition-all">
+              <span class="w-5 h-5 rounded-full bg-slate-950 border border-slate-700 shadow-xs"></span>
+              <span class="text-xs font-semibold text-slate-200">Matte Black</span>
+            </button>
+            <!-- Clear -->
+            <button type="button" 
+                    data-cap-button 
+                    data-cap="clear" 
+                    data-action="click->custom-bottle#selectCap" 
+                    class="group flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 transition-all">
+              <span class="w-5 h-5 rounded-full bg-slate-200 shadow-xs"></span>
+              <span class="text-xs font-semibold text-slate-200">Crystal Clear</span>
+            </button>
+            <!-- Emerald Green -->
+            <button type="button" 
+                    data-cap-button 
+                    data-cap="green" 
+                    data-action="click->custom-bottle#selectCap" 
+                    class="group flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 transition-all">
+              <span class="w-5 h-5 rounded-full bg-emerald-600 shadow-xs"></span>
+              <span class="text-xs font-semibold text-slate-200">Emerald</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Label Aesthetic Style -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-sky-400 mb-3">
+            4. Label Material & Texture
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button type="button" 
+                    data-style-button 
+                    data-style="midnight" 
+                    data-action="click->custom-bottle#selectLabelStyle" 
+                    class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold ring-2 ring-sky-500 text-white transition-all text-center">
+              Midnight Luxury
+            </button>
+            <button type="button" 
+                    data-style-button 
+                    data-style="royal_white" 
+                    data-action="click->custom-bottle#selectLabelStyle" 
+                    class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-xs text-slate-300 transition-all text-center">
+              Pearl White
+            </button>
+            <button type="button" 
+                    data-style-button 
+                    data-style="transparent_cyan" 
+                    data-action="click->custom-bottle#selectLabelStyle" 
+                    class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-xs text-slate-300 transition-all text-center">
+              Clear Film
+            </button>
+            <button type="button" 
+                    data-style-button 
+                    data-style="luxury_gold" 
+                    data-action="click->custom-bottle#selectLabelStyle" 
+                    class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-xs text-slate-300 transition-all text-center">
+              Gold Foil
+            </button>
+          </div>
+        </div>
+
+        <!-- Action: Request Sample Kit -->
+        <div class="pt-4 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <span class="text-xs text-slate-400 block">Estimated Unit Base Rate</span>
+            <span class="text-2xl font-bold text-sky-400" data-custom-bottle-target="priceDisplay">₹11.50</span>
+            <span class="text-[11px] text-slate-500 ml-1">(excl. GST)</span>
+          </div>
+
+          <button type="button" 
+                  data-action="click->custom-bottle#requestSample" 
+                  class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-bold rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            Request Physical Sample Box
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Live Bottle Visualizer (Right 5 Cols) -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center">
+        
+        <div class="w-full max-w-sm bg-gradient-to-b from-slate-800 to-slate-900 rounded-3xl p-8 border border-slate-700 flex flex-col items-center relative shadow-2xl">
+          
+          <div class="absolute top-4 left-4 bg-slate-800/80 border border-slate-700 px-3 py-1 rounded-full text-[10px] font-mono text-sky-400 tracking-wider">
+            LIVE 3D SIMULATION
+          </div>
+
+          <div class="absolute top-4 right-4 bg-sky-500/20 text-sky-300 border border-sky-400/30 px-2.5 py-0.5 rounded-full text-xs font-bold" data-custom-bottle-target="volumeBadge">
+            500ml
+          </div>
+
+          <!-- Dynamic Bottle Render Structure -->
+          <div class="my-10 flex flex-col items-center transition-all duration-300" data-custom-bottle-target="bottlePreview">
+            
+            <!-- Dynamic Cap Target -->
+            <div data-custom-bottle-target="capElement" class="w-14 h-9 rounded-t-lg bg-gradient-to-r from-amber-400 via-amber-300 to-amber-600 border-b-2 border-amber-600 shadow-md transition-all duration-300"></div>
+            
+            <!-- Neck Ring -->
+            <div class="w-8 h-7 bg-white/20 border-x border-white/30 backdrop-blur-xs"></div>
+            
+            <!-- Bottle Shoulder -->
+            <div class="w-36 h-12 bg-gradient-to-r from-white/10 via-white/30 to-white/10 rounded-t-3xl border-t border-x border-white/20 backdrop-blur-xs"></div>
+            
+            <!-- Main Body with Dynamic Label Area -->
+            <div class="w-36 min-h-48 bg-gradient-to-r from-white/15 via-white/25 to-white/15 border-x border-white/20 flex flex-col items-center justify-center p-2 relative shadow-inner">
+              
+              <!-- Dynamic Label Target -->
+              <div data-custom-bottle-target="labelArea" class="relative w-full py-6 px-2 text-center rounded-sm bg-gradient-to-b from-slate-900 via-slate-950 to-sky-950 text-white shadow-xl transition-all duration-300">
+                <img data-custom-bottle-target="brandLogo" class="hidden w-8 h-8 mx-auto mb-1.5 object-contain" alt="Brand Logo">
+                <p class="text-[8px] uppercase tracking-widest text-sky-400 font-semibold">CUSTOM PRIVATE LABEL</p>
+                <h4 data-custom-bottle-target="brandName" class="text-xs font-extrabold tracking-wider uppercase text-amber-300 truncate">
+                  YOUR BRAND HERE
+                </h4>
+                <p data-custom-bottle-target="brandSubtitle" class="text-[8px] text-slate-300 truncate mt-0.5 font-medium">
+                  PREMIUM PACKAGED WATER
+                </p>
+                <div class="mt-2 pt-1 border-t border-white/10 text-[7px] text-sky-200/80 font-mono">
+                  MANUFACTURED BY P. K. ENTERPRISES
+                </div>
+              </div>
+
+            </div>
+            
+            <!-- Bottle Base -->
+            <div class="w-36 h-10 bg-gradient-to-r from-white/10 via-white/30 to-white/10 rounded-b-2xl border-b border-x border-white/20 shadow-sm"></div>
+
+          </div>
+
+          <p class="text-[11px] text-slate-400 text-center">
+            *High-resolution offset foil printing with anti-scratch matte or gloss laminate coating.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

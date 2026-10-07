@@ -1,0 +1,106 @@
+<section id="pricing" class="py-20 bg-slate-50" data-controller="moq-calculator">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest text-sky-600 uppercase bg-sky-100 px-3 py-1 rounded-full">
+        B2B Volume Pricing Engine
+      </span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Transparent Tiered Wholesale Calculator
+      </h2>
+      <p class="mt-4 text-base text-slate-600 leading-relaxed">
+        Scale your order from small pilot batches to monthly enterprise supply. Unlock automatic wholesale discounts based on your production volume.
+      </p>
+    </div>
+
+    <!-- Calculator Box -->
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Sliders and Selectors (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Bottle Size Selector -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+              Select Product Type
+            </label>
+            <select data-moq-calculator-target="bottleSelect" 
+                    data-action="change->moq-calculator#updateQuantity"
+                    class="w-full bg-slate-50 text-slate-800 font-semibold px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">
+              <option value="200ml">200ml Executive Pocket Bottle (Base ₹7.50)</option>
+              <option value="500ml" selected>500ml HORECA Classic Bottle (Base ₹11.50)</option>
+              <option value="1000ml">1 Litre Standard Retail Bottle (Base ₹17.00)</option>
+              <option value="20L">20L Commercial Dispenser Jar (Base ₹45.00)</option>
+            </select>
+          </div>
+
+          <!-- Quantity Slider -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-xs font-bold text-slate-700 uppercase tracking-wider">Order Batch Size</label>
+              <span class="text-lg font-extrabold text-sky-600" data-moq-calculator-target="quantityDisplay">1,000 Bottles</span>
+            </div>
+            
+            <input type="range" 
+                   min="500" 
+                   max="50000" 
+                   step="500" 
+                   value="1000" 
+                   data-moq-calculator-target="slider"
+                   data-action="input->moq-calculator#updateQuantity"
+                   class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600">
+            
+            <div class="flex justify-between text-[11px] text-slate-400 font-semibold mt-2">
+              <span>500 (Min MOQ)</span>
+              <span>5,000</span>
+              <span>20,000</span>
+              <span>50,000+</span>
+            </div>
+          </div>
+
+          <!-- Tier Info -->
+          <div class="flex items-center gap-3 pt-2">
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold" data-moq-calculator-target="discountBadge">
+              Standard Tier (5% OFF)
+            </span>
+            <span class="text-xs text-slate-500 font-medium">Turnaround: <strong class="text-slate-700" data-moq-calculator-target="turnaroundBadge">3-4 Business Days</strong></span>
+          </div>
+
+        </div>
+
+        <!-- Right: Estimate Summary (5 Cols) -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl p-6 sm:p-8 border border-sky-100 flex flex-col justify-between space-y-6">
+          
+          <div>
+            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block">Effective Unit Rate</span>
+            <div class="text-3xl sm:text-4xl font-extrabold text-sky-900 mt-1" data-moq-calculator-target="unitPriceDisplay">
+              ₹10.93
+            </div>
+            <span class="text-[11px] text-slate-400">per bottle (with active volume tier)</span>
+          </div>
+
+          <div class="pt-4 border-t border-sky-200/60">
+            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block">Estimated Batch Total</span>
+            <div class="text-2xl sm:text-3xl font-bold text-slate-800 mt-0.5" data-moq-calculator-target="totalEstimateDisplay">
+              ₹10,925
+            </div>
+            <span class="text-[10px] text-slate-400">*Excluding applicable 18% GST & logistics</span>
+          </div>
+
+          <button type="button" 
+                  data-action="click->moq-calculator#requestQuote" 
+                  class="w-full py-3.5 px-6 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-md transition-all">
+            Lock This Tier & Get Invoice
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

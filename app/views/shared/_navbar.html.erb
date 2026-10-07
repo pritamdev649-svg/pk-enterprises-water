@@ -1,0 +1,73 @@
+<header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-200" data-controller="mobile-menu">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-sky-600 via-sky-500 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
+          💧
+        </div>
+        <div>
+          <span class="text-xl font-extrabold text-slate-900 tracking-tight block">P. K. Enterprises</span>
+          <span class="text-[10px] font-bold text-sky-600 tracking-widest uppercase block -mt-1">Packaged Water & Bottles</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#bottles" class="hover:text-sky-600 transition-colors">Bottle Sizes</a>
+        <a href="#custom-studio" class="hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <span>Custom Branding</span>
+          <span class="px-2 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-800 rounded-full">Hot</span>
+        </a>
+        <a href="#purification" class="hover:text-sky-600 transition-colors">11-Stage Purification</a>
+        <a href="#calculator" class="hover:text-sky-600 transition-colors">MOQ & Pricing</a>
+        <a href="#industries" class="hover:text-sky-600 transition-colors">Industries</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="tel:+917800730968" class="text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-3.5 py-2.5 rounded-xl transition flex items-center gap-2">
+          <span>📞</span> +91 78007 30968
+        </a>
+        <button 
+          data-action="click->modal#open" 
+          class="bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow-md shadow-sky-600/20 hover:shadow-lg transition-all transform active:scale-95 cursor-pointer">
+          Request Samples →
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        data-action="click->mobile-menu#toggle" 
+        type="button" 
+        class="md:hidden p-2.5 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+        aria-label="Toggle Navigation Menu">
+        <span data-mobile-menu-target="openIcon" class="text-xl">☰</span>
+        <span data-mobile-menu-target="closeIcon" class="text-xl hidden">✕</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div data-mobile-menu-target="menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-6 shadow-xl animate-fadeIn">
+    <div class="flex flex-col gap-4 text-base font-semibold text-slate-700">
+      <a href="#bottles" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">Bottle Sizes & Packaging</a>
+      <a href="#custom-studio" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600 flex justify-between items-center">
+        <span>Custom Label Builder</span>
+        <span class="px-2 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-800 rounded-full">Hot</span>
+      </a>
+      <a href="#purification" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">11-Stage PureStream Technology</a>
+      <a href="#calculator" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">MOQ & Bulk Price Calculator</a>
+      <a href="#industries" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">Industries Served</a>
+      <div class="pt-4 flex flex-col gap-3">
+        <button 
+          data-action="click->modal#open click->mobile-menu#close" 
+          class="w-full bg-sky-600 text-white font-bold py-3 rounded-xl shadow-md text-center">
+          Request Free Sample Kit →
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

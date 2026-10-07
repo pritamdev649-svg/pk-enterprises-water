@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <title><%= content_for(:title) || "P. K. Enterprises | Packaged Drinking Water & Custom Bottle Manufacturing" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="P. K. Enterprises is a premier packaged drinking water manufacturer offering 11-stage purification and customized private-label water bottles for hotels, airlines, and corporate brands.">
+    <meta name="theme-color" content="#0284c7">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-slate-50 text-slate-800 font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-sky-500 selection:text-white" data-controller="modal" data-action="keydown@window->modal#handleKeydown">
+    <%= render "shared/navbar" %>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <%= render "shared/footer" %>
+    <%= render "pages/quotation_modal" %>
+  </body>
+</html>

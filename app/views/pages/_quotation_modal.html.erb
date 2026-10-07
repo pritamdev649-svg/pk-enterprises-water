@@ -1,0 +1,93 @@
+<!-- Quotation / Sample Request Modal -->
+<div data-modal-target="modal" 
+     class="hidden fixed inset-0 z-50 overflow-y-auto" 
+     aria-labelledby="modal-title" 
+     role="dialog" 
+     aria-modal="true">
+  
+  <!-- Backdrop -->
+  <div data-modal-target="backdrop" 
+       data-action="click->modal#handleBackdropClick"
+       class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity"></div>
+
+  <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+    <div class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg border border-slate-100">
+      
+      <!-- Modal Header -->
+      <div class="bg-slate-900 px-6 py-5 text-white flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-semibold">P. K. ENTERPRISES B2B DESK</span>
+          <h3 class="text-lg font-bold text-white mt-0.5" id="modal-title">Request Batch Quotation & Sample Kit</h3>
+        </div>
+        <button type="button" 
+                data-action="click->modal#close" 
+                class="rounded-xl p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body / Form -->
+      <form action="#" method="POST" class="p-6 space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your quotation request has been received. Our B2B Corporate Desk will contact you within 2 hours with official spec sheets.'); document.querySelector('[data-modal-target=modal]').classList.add('hidden'); document.body.classList.remove('overflow-hidden');">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+            <input type="text" required placeholder="Full Name" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Company / Hotel Name *</label>
+            <input type="text" required placeholder="e.g. Grand Horizon Hotel" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Work Email *</label>
+            <input type="email" required placeholder="contact@company.com" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number (WhatsApp) *</label>
+            <input type="tel" required placeholder="+91 98765 43210" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Bottle Size Requirement</label>
+            <select data-modal-target="sizeInput" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none bg-slate-50">
+              <option value="200ml">200ml Executive Pocket</option>
+              <option value="500ml" selected>500ml HORECA Classic</option>
+              <option value="1000ml">1 Litre Standard</option>
+              <option value="20L">20L Commercial Jar</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Estimated Batch Quantity</label>
+            <input type="number" data-modal-target="quantityInput" placeholder="e.g. 2500" value="1000" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Delivery City & Special Customization Notes</label>
+          <textarea data-modal-target="notesInput" rows="3" placeholder="Tell us about custom foil stamping, logo placement, or recurring delivery schedule..." class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none"></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-3">
+          <button type="button" 
+                  data-action="click->modal#close" 
+                  class="px-4 py-2.5 text-xs font-semibold text-slate-600 hover:text-slate-900 rounded-xl">
+            Cancel
+          </button>
+          <button type="submit" 
+                  class="px-6 py-2.5 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded-xl shadow-md transition-all">
+            Submit RFQ & Request Sample
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
