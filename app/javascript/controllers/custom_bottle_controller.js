@@ -13,7 +13,11 @@ export default class extends Controller {
     "nameInput",
     "subtitleInput",
     "sizeInput",
-    "capInput"
+    "capInput",
+    "interactiveView",
+    "photoView",
+    "interactiveTabBtn",
+    "photoTabBtn"
   ]
 
   static values = {
@@ -133,6 +137,32 @@ export default class extends Controller {
     // Update price estimate
     if (this.hasPriceDisplayTarget) {
       this.priceDisplayTarget.textContent = `₹${this.basePriceValue.toFixed(2)}`
+    }
+  }
+
+  showInteractive() {
+    if (this.hasInteractiveViewTarget && this.hasPhotoViewTarget) {
+      this.interactiveViewTarget.classList.remove("hidden")
+      this.photoViewTarget.classList.add("hidden")
+    }
+    if (this.hasInteractiveTabBtnTarget && this.hasPhotoTabBtnTarget) {
+      this.interactiveTabBtnTarget.classList.add("bg-sky-600", "text-white")
+      this.interactiveTabBtnTarget.classList.remove("text-slate-400", "hover:text-white")
+      this.photoTabBtnTarget.classList.remove("bg-sky-600", "text-white")
+      this.photoTabBtnTarget.classList.add("text-slate-400", "hover:text-white")
+    }
+  }
+
+  showPhoto() {
+    if (this.hasInteractiveViewTarget && this.hasPhotoViewTarget) {
+      this.interactiveViewTarget.classList.add("hidden")
+      this.photoViewTarget.classList.remove("hidden")
+    }
+    if (this.hasInteractiveTabBtnTarget && this.hasPhotoTabBtnTarget) {
+      this.photoTabBtnTarget.classList.add("bg-sky-600", "text-white")
+      this.photoTabBtnTarget.classList.remove("text-slate-400", "hover:text-white")
+      this.interactiveTabBtnTarget.classList.remove("bg-sky-600", "text-white")
+      this.interactiveTabBtnTarget.classList.add("text-slate-400", "hover:text-white")
     }
   }
 

@@ -199,51 +199,82 @@
       <!-- Live Bottle Visualizer (Right 5 Cols) -->
       <div class="lg:col-span-5 flex flex-col items-center justify-center">
         
-        <div class="w-full max-w-sm bg-gradient-to-b from-slate-800 to-slate-900 rounded-3xl p-8 border border-slate-700 flex flex-col items-center relative shadow-2xl">
+        <div class="w-full max-w-sm bg-gradient-to-b from-slate-800 to-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-700 flex flex-col items-center relative shadow-2xl">
           
-          <div class="absolute top-4 left-4 bg-slate-800/80 border border-slate-700 px-3 py-1 rounded-full text-[10px] font-mono text-sky-400 tracking-wider">
-            LIVE 3D SIMULATION
+          <!-- Top Mode Toggle & Volume Badge -->
+          <div class="w-full flex items-center justify-between pb-4 border-b border-slate-700/60">
+            <div class="inline-flex p-1 bg-slate-900/90 rounded-xl border border-slate-700 text-[11px] font-semibold">
+              <button type="button" 
+                      data-custom-bottle-target="interactiveTabBtn"
+                      data-action="click->custom-bottle#showInteractive"
+                      class="px-2.5 py-1 rounded-lg bg-sky-600 text-white transition-all">
+                Interactive 3D
+              </button>
+              <button type="button" 
+                      data-custom-bottle-target="photoTabBtn"
+                      data-action="click->custom-bottle#showPhoto"
+                      class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white transition-all flex items-center gap-1">
+                <span>📸</span> Photo Proof
+              </button>
+            </div>
+
+            <div class="bg-sky-500/20 text-sky-300 border border-sky-400/30 px-2.5 py-0.5 rounded-full text-xs font-bold" data-custom-bottle-target="volumeBadge">
+              500ml
+            </div>
           </div>
 
-          <div class="absolute top-4 right-4 bg-sky-500/20 text-sky-300 border border-sky-400/30 px-2.5 py-0.5 rounded-full text-xs font-bold" data-custom-bottle-target="volumeBadge">
-            500ml
-          </div>
-
-          <!-- Dynamic Bottle Render Structure -->
-          <div class="my-10 flex flex-col items-center transition-all duration-300" data-custom-bottle-target="bottlePreview">
-            
-            <!-- Dynamic Cap Target -->
-            <div data-custom-bottle-target="capElement" class="w-14 h-9 rounded-t-lg bg-gradient-to-r from-amber-400 via-amber-300 to-amber-600 border-b-2 border-amber-600 shadow-md transition-all duration-300"></div>
-            
-            <!-- Neck Ring -->
-            <div class="w-8 h-7 bg-white/20 border-x border-white/30 backdrop-blur-xs"></div>
-            
-            <!-- Bottle Shoulder -->
-            <div class="w-36 h-12 bg-gradient-to-r from-white/10 via-white/30 to-white/10 rounded-t-3xl border-t border-x border-white/20 backdrop-blur-xs"></div>
-            
-            <!-- Main Body with Dynamic Label Area -->
-            <div class="w-36 min-h-48 bg-gradient-to-r from-white/15 via-white/25 to-white/15 border-x border-white/20 flex flex-col items-center justify-center p-2 relative shadow-inner">
+          <!-- 1. Interactive 3D Simulation View -->
+          <div data-custom-bottle-target="interactiveView" class="w-full flex flex-col items-center">
+            <!-- Dynamic Bottle Render Structure -->
+            <div class="my-8 flex flex-col items-center transition-all duration-300" data-custom-bottle-target="bottlePreview">
               
-              <!-- Dynamic Label Target -->
-              <div data-custom-bottle-target="labelArea" class="relative w-full py-6 px-2 text-center rounded-sm bg-gradient-to-b from-slate-900 via-slate-950 to-sky-950 text-white shadow-xl transition-all duration-300">
-                <img data-custom-bottle-target="brandLogo" class="hidden w-8 h-8 mx-auto mb-1.5 object-contain" alt="Brand Logo">
-                <p class="text-[8px] uppercase tracking-widest text-sky-400 font-semibold">CUSTOM PRIVATE LABEL</p>
-                <h4 data-custom-bottle-target="brandName" class="text-xs font-extrabold tracking-wider uppercase text-amber-300 truncate">
-                  YOUR BRAND HERE
-                </h4>
-                <p data-custom-bottle-target="brandSubtitle" class="text-[8px] text-slate-300 truncate mt-0.5 font-medium">
-                  PREMIUM PACKAGED WATER
-                </p>
-                <div class="mt-2 pt-1 border-t border-white/10 text-[7px] text-sky-200/80 font-mono">
-                  MANUFACTURED BY P. K. ENTERPRISES
+              <!-- Dynamic Cap Target -->
+              <div data-custom-bottle-target="capElement" class="w-14 h-9 rounded-t-lg bg-gradient-to-r from-amber-400 via-amber-300 to-amber-600 border-b-2 border-amber-600 shadow-md transition-all duration-300"></div>
+              
+              <!-- Neck Ring -->
+              <div class="w-8 h-7 bg-white/20 border-x border-white/30 backdrop-blur-xs"></div>
+              
+              <!-- Bottle Shoulder -->
+              <div class="w-36 h-12 bg-gradient-to-r from-white/10 via-white/30 to-white/10 rounded-t-3xl border-t border-x border-white/20 backdrop-blur-xs"></div>
+              
+              <!-- Main Body with Dynamic Label Area -->
+              <div class="w-36 min-h-48 bg-gradient-to-r from-white/15 via-white/25 to-white/15 border-x border-white/20 flex flex-col items-center justify-center p-2 relative shadow-inner">
+                
+                <!-- Dynamic Label Target -->
+                <div data-custom-bottle-target="labelArea" class="relative w-full py-6 px-2 text-center rounded-sm bg-gradient-to-b from-slate-900 via-slate-950 to-sky-950 text-white shadow-xl transition-all duration-300">
+                  <img data-custom-bottle-target="brandLogo" class="hidden w-8 h-8 mx-auto mb-1.5 object-contain" alt="Brand Logo">
+                  <p class="text-[8px] uppercase tracking-widest text-sky-400 font-semibold">CUSTOM PRIVATE LABEL</p>
+                  <h4 data-custom-bottle-target="brandName" class="text-xs font-extrabold tracking-wider uppercase text-amber-300 truncate">
+                    YOUR BRAND HERE
+                  </h4>
+                  <p data-custom-bottle-target="brandSubtitle" class="text-[8px] text-slate-300 truncate mt-0.5 font-medium">
+                    PREMIUM PACKAGED WATER
+                  </p>
+                  <div class="mt-2 pt-1 border-t border-white/10 text-[7px] text-sky-200/80 font-mono">
+                    MANUFACTURED BY P. K. ENTERPRISES
+                  </div>
                 </div>
+
               </div>
+              
+              <!-- Bottle Base -->
+              <div class="w-36 h-10 bg-gradient-to-r from-white/10 via-white/30 to-white/10 rounded-b-2xl border-b border-x border-white/20 shadow-sm"></div>
 
             </div>
-            
-            <!-- Bottle Base -->
-            <div class="w-36 h-10 bg-gradient-to-r from-white/10 via-white/30 to-white/10 rounded-b-2xl border-b border-x border-white/20 shadow-sm"></div>
+          </div>
 
+          <!-- 2. Real Studio Photograph View -->
+          <div data-custom-bottle-target="photoView" class="hidden w-full flex-col items-center my-6">
+            <div class="relative overflow-hidden rounded-2xl bg-slate-950/70 p-2 border border-slate-700/60 shadow-inner flex items-center justify-center">
+              <%= image_tag "custom_studio_bottle.jpg", 
+                  alt: "Real Luxury Bottling Production Proof - P.K. Enterprises",
+                  class: "w-52 h-[360px] object-contain rounded-xl drop-shadow-2xl transition-transform duration-500 hover:scale-105" %>
+            </div>
+            <div class="mt-3 text-center">
+              <span class="text-[11px] font-semibold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+                ⭐ Actual Bottling Line Proof Sample
+              </span>
+            </div>
           </div>
 
           <p class="text-[11px] text-slate-400 text-center">
