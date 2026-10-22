@@ -17,10 +17,10 @@ export default class extends Controller {
   showTab(index) {
     this.tabTargets.forEach((tab, i) => {
       if (i === index) {
-        tab.classList.add("bg-sky-600", "text-white", "shadow-sm")
+        tab.classList.add("bg-sky-600", "text-white")
         tab.classList.remove("bg-white", "text-slate-600", "hover:bg-slate-50")
       } else {
-        tab.classList.remove("bg-sky-600", "text-white", "shadow-sm")
+        tab.classList.remove("bg-sky-600", "text-white")
         tab.classList.add("bg-white", "text-slate-600", "hover:bg-slate-50")
       }
     })

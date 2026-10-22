@@ -39,11 +39,11 @@ export default class extends Controller {
 
     // Update active button state
     this.element.querySelectorAll("[data-size-button]").forEach(btn => {
-      btn.classList.remove("bg-sky-600", "text-white", "shadow-sm")
+      btn.classList.remove("bg-sky-600", "text-white")
       btn.classList.add("bg-white", "text-slate-700")
     })
     event.currentTarget.classList.remove("bg-white", "text-slate-700")
-    event.currentTarget.classList.add("bg-sky-600", "text-white", "shadow-sm")
+    event.currentTarget.classList.add("bg-sky-600", "text-white")
 
     this.updatePreview()
   }
