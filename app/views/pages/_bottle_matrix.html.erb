@@ -1,154 +1,71 @@
-<section id="products" class="py-20 bg-white">
+<section id="products" class="py-20 bg-slate-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <!-- Section Heading -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-bold tracking-widest text-sky-600 uppercase bg-sky-100/70 px-3 py-1 rounded-full">
-        Packaged Drinking Water Lineup
+        Neer Aqua Product Range
       </span>
       <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-        Precision Bottling for Every Occasion
+        250 मिली • 500 मिली • 1 लीटर • 2 लीटर
       </h2>
       <p class="mt-4 text-base text-slate-600 leading-relaxed">
-        Engineered with virgin, BPA-free food-grade polymers and bottled in a certified sterile cleanroom facility. Available in generic distribution and private-label custom branding.
+        Neer Aqua packaged drinking water with added minerals, available in four practical sizes for retail counters, distributors, hotels, offices, institutions and events. Bulk and repeat orders welcome.
       </p>
     </div>
 
     <!-- Product Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      
-      <!-- 200ml Pocket Bottle -->
-      <div class="bg-slate-50/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:shadow-lg hover:bg-sky-50/40">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-sky-100 text-sky-800">Events & Conferences</span>
-            <span class="text-xs font-semibold text-slate-400">IS 14543</span>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <% [
+        { size: "250ml", title: "250 ml Pocket", image: "neer_aqua_250ml.jpg", tag: "Events & Meetings",
+          text: "Compact bottle for seminars, weddings, catering, conferences and counter sales. Less wastage per guest.", featured: false },
+        { size: "500ml", title: "500 ml Classic", image: "neer_aqua_500ml.jpg", tag: "Retail Best Seller",
+          text: "The everyday bottle for shops, hotels, restaurants, travel and offices. Fast-moving retail size.", featured: true },
+        { size: "1000ml", title: "1 Litre Standard", image: "neer_aqua_1l.jpg", tag: "Retail & Travel",
+          text: "All-day hydration for travellers, retail distribution, corporate cafeterias and institutional supply.", featured: false },
+        { size: "2000ml", title: "2 Litre Family", image: "neer_aqua_2l.jpg", tag: "Family & Bulk Use",
+          text: "Large-format bottle for homes, offices, catering kitchens and group consumption at better value.", featured: false }
+      ].each do |p| %>
+        <div class="<%= p[:featured] ? 'bg-sky-50 ring-2 ring-sky-500/30 relative' : 'bg-white' %> rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:shadow-lg shadow-xs">
+          <% if p[:featured] %>
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow-xs whitespace-nowrap">
+              Most Popular
+            </div>
+          <% end %>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-sky-100 text-sky-800"><%= p[:tag] %></span>
+              <span class="text-xs font-semibold text-[#5c9a3a]">Neer Aqua</span>
+            </div>
+
+            <div class="flex items-center justify-center h-64 overflow-hidden rounded-xl bg-gradient-to-b from-sky-50 to-white mb-3 border border-slate-100">
+              <%= image_tag p[:image],
+                  alt: "Neer Aqua #{p[:title]} packaged drinking water bottle",
+                  class: "h-full w-auto object-contain transition-transform duration-300 hover:scale-105" %>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-900 mt-2"><%= p[:title] %></h3>
+            <p class="text-xs text-slate-600 mt-1"><%= p[:text] %></p>
           </div>
 
-          <!-- Real Bottle Image -->
-          <div class="py-3 flex items-center justify-center h-48 overflow-hidden rounded-xl bg-gradient-to-b from-slate-100/50 via-white to-slate-50/40 mb-3 border border-slate-100/80">
-            <%= image_tag "bottle_200ml.jpg",
-                alt: "P.K. Enterprises 200ml Compact Executive Water Bottle",
-                class: "h-44 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-md" %>
+          <div class="mt-6 pt-4 border-t border-slate-200/70">
+            <button data-action="click->modal#open" data-size="<%= p[:size] %>" class="w-full py-2.5 px-4 rounded-xl <%= p[:featured] ? 'bg-sky-600 hover:bg-sky-700 text-white' : 'bg-white hover:bg-sky-600 hover:text-white text-sky-700 border border-sky-200/70' %> text-xs font-bold shadow-xs transition-colors duration-200">
+              Order <%= p[:title] %>
+            </button>
           </div>
-
-          <h3 class="text-lg font-bold text-slate-900 mt-2">200ml Executive</h3>
-          <p class="text-xs text-slate-600 mt-1">
-            Ideal for corporate boardrooms, airline transit, seminars, and wedding welcome drink trays. Reduces water wastage.
-          </p>
         </div>
+      <% end %>
+    </div>
 
-        <div class="mt-6 pt-4 border-t border-slate-200/70">
-          <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
-            <span>Case Packing:</span>
-            <span class="font-bold text-slate-700">48 Units / Case</span>
-          </div>
-          <button data-action="click->modal#open" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-sky-600 hover:text-white text-sky-700 text-xs font-bold shadow-xs border border-sky-200/70 transition-colors duration-200">
-            Inquire 200ml Batch
-          </button>
-        </div>
+    <!-- Trade Offer Banner -->
+    <div class="mt-12 rounded-3xl bg-gradient-to-r from-[#0a4f66] to-sky-700 p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+      <div class="text-center md:text-left">
+        <p class="text-xl sm:text-2xl font-extrabold">रिटेलर • डिस्ट्रीब्यूटर • होलसेलर &mdash; <span class="text-amber-300">10% छूट</span></p>
+        <p class="text-sm text-sky-100 mt-1">Special trade discount for retailers, distributors and wholesalers of Neer Aqua.</p>
       </div>
-
-      <!-- 500ml Classic Table Bottle -->
-      <div class="bg-sky-50/70 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:shadow-lg ring-2 ring-sky-500/30 relative">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow-xs">
-          Best Seller for HORECA
-        </div>
-
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-sky-200/80 text-sky-900">Fine Dining & Hotels</span>
-            <span class="text-xs font-semibold text-slate-400">IS 14543</span>
-          </div>
-
-          <!-- Real Bottle Image -->
-          <div class="py-3 flex items-center justify-center h-48 overflow-hidden rounded-xl bg-gradient-to-b from-sky-100/50 via-white to-sky-50/30 mb-3 border border-sky-100">
-            <%= image_tag "hero_bottle.jpg",
-                alt: "P.K. Enterprises 500ml HORECA Premium Water Bottle",
-                class: "h-44 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-md" %>
-          </div>
-
-          <h3 class="text-lg font-bold text-slate-900 mt-2">500ml HORECA Premium</h3>
-          <p class="text-xs text-slate-600 mt-1">
-            The gold standard for hotel guestrooms, restaurant table dining, banquets, and luxury car fleet hospitality.
-          </p>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-sky-200/60">
-          <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
-            <span>Case Packing:</span>
-            <span class="font-bold text-slate-700">24 Units / Case</span>
-          </div>
-          <button data-action="click->modal#open" class="w-full py-2.5 px-4 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold shadow-sm transition-colors duration-200">
-            Inquire 500ml Batch
-          </button>
-        </div>
-      </div>
-
-      <!-- 1 Litre Retail & Institutional -->
-      <div class="bg-slate-50/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:shadow-lg hover:bg-sky-50/40">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-sky-100 text-sky-800">Retail & Travel</span>
-            <span class="text-xs font-semibold text-slate-400">IS 14543</span>
-          </div>
-
-          <!-- Real Bottle Image -->
-          <div class="py-3 flex items-center justify-center h-48 overflow-hidden rounded-xl bg-gradient-to-b from-slate-100/50 via-white to-slate-50/40 mb-3 border border-slate-100/80">
-            <%= image_tag "bottle_1l.jpg",
-                alt: "P.K. Enterprises 1 Litre Packaged Drinking Water Bottle",
-                class: "h-44 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-md" %>
-          </div>
-
-          <h3 class="text-lg font-bold text-slate-900 mt-2">1 Litre Standard</h3>
-          <p class="text-xs text-slate-600 mt-1">
-            Engineered for all-day hydration, long journeys, retail distribution, corporate cafeterias, and institutional bulk use.
-          </p>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-slate-200/70">
-          <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
-            <span>Case Packing:</span>
-            <span class="font-bold text-slate-700">12 Units / Case</span>
-          </div>
-          <button data-action="click->modal#open" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-sky-600 hover:text-white text-sky-700 text-xs font-bold shadow-xs border border-sky-200/70 transition-colors duration-200">
-            Inquire 1L Batch
-          </button>
-        </div>
-      </div>
-
-      <!-- 20L Bulk Commercial Jar -->
-      <div class="bg-slate-50/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-200 hover:shadow-lg hover:bg-sky-50/40">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-emerald-100 text-emerald-800">Offices & Plants</span>
-            <span class="text-xs font-semibold text-slate-400">Heavy-Duty</span>
-          </div>
-
-          <!-- Real Bottle Image -->
-          <div class="py-3 flex items-center justify-center h-48 overflow-hidden rounded-xl bg-gradient-to-b from-slate-100/50 via-white to-slate-50/40 mb-3 border border-slate-100/80">
-            <%= image_tag "bottle_20l.jpg",
-                alt: "P.K. Enterprises 20 Litre Bulk Water Dispenser Jar",
-                class: "h-44 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-md" %>
-          </div>
-
-          <h3 class="text-lg font-bold text-slate-900 mt-2">20L Bulk Dispenser Jar</h3>
-          <p class="text-xs text-slate-600 mt-1">
-            Ultra-hygienic automated wash & refill system for offices, IT parks, factories, and schools. Scheduled daily/weekly route delivery.
-          </p>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-slate-200/70">
-          <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
-            <span>Refill Type:</span>
-            <span class="font-bold text-slate-700">Tamper-Proof Bubble Top</span>
-          </div>
-          <button data-action="click->modal#open" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-emerald-600 hover:text-white text-emerald-700 text-xs font-bold shadow-xs border border-emerald-200/70 transition-colors duration-200">
-            Setup Office Route Delivery
-          </button>
-        </div>
-      </div>
-
+      <a href="tel:+919069332151" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0a4f66] font-extrabold text-lg shadow-md hover:bg-sky-50 transition">
+        📞 ऑर्डर: 9069332151
+      </a>
     </div>
   </div>
 </section>

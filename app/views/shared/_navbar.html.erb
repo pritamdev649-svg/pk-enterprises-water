@@ -3,35 +3,36 @@
     <div class="flex items-center justify-between h-20">
       
       <!-- Brand Logo -->
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-sky-600 via-sky-500 to-cyan-400 flex items-center justify-center text-white font-black text-xl shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
-          💧
-        </div>
-        <div>
-          <span class="text-xl font-extrabold text-slate-900 tracking-tight block">P. K. Enterprises</span>
-          <span class="text-[10px] font-bold text-sky-600 tracking-widest uppercase block -mt-1">Packaged Water & Bottles</span>
+      <a href="/" class="flex items-center gap-3 group shrink-0">
+        <%= image_tag "neer_aqua_logo.png",
+            alt: "Neer Aqua logo",
+            class: "h-14 w-auto group-hover:scale-105 transition-transform" %>
+        <div class="hidden sm:block border-l border-slate-200 pl-3">
+          <span class="text-lg font-extrabold text-[#0a4f66] tracking-tight block leading-tight">P. K. Enterprises</span>
+          <span class="text-[10px] font-bold text-[#5c9a3a] tracking-widest uppercase block">Packaged Drinking Water</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-xs lg:text-sm font-semibold text-slate-600 whitespace-nowrap">
+        <a href="#about" class="hover:text-sky-600 transition-colors">About Us</a>
         <a href="#products" class="hover:text-sky-600 transition-colors">Bottle Sizes</a>
         <a href="#custom-studio" class="hover:text-sky-600 transition-colors flex items-center gap-1.5">
           <span>Custom Branding</span>
           <span class="px-1.5 py-0.5 text-[9px] font-bold bg-amber-100 text-amber-800 rounded-full">Hot</span>
         </a>
-        <a href="#purification" class="hover:text-sky-600 transition-colors">Purification</a>
+        <a href="#gallery" class="hover:text-sky-600 transition-colors">Gallery</a>
         <a href="#pricing" class="hover:text-sky-600 transition-colors">Pricing & MOQ</a>
-        <a href="#industries" class="hover:text-sky-600 transition-colors">Industries</a>
+        <a href="#industries" class="hover:text-sky-600 transition-colors">Who We Serve</a>
       </nav>
 
       <!-- Action Buttons -->
       <div class="hidden lg:flex items-center gap-3 shrink-0">
-        <a href="tel:+917988976789" class="text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
+        <a href="tel:+919069332151" class="text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5 whitespace-nowrap shrink-0">
           <svg class="w-3.5 h-3.5 text-sky-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
-          <span class="tracking-wide">+91 78007 30968</span>
+          <span class="tracking-wide">+91 90693 32151</span>
         </a>
         <button 
           data-action="click->modal#open" 
@@ -56,15 +57,18 @@
   <!-- Mobile Dropdown Menu -->
   <div data-mobile-menu-target="menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-6 shadow-xl animate-fadeIn">
     <div class="flex flex-col gap-4 text-base font-semibold text-slate-700">
-      <a href="#bottles" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">Bottle Sizes & Packaging</a>
+      <a href="#about" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">About P. K. Enterprises</a>
+      <a href="#products" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">Neer Aqua Bottle Sizes</a>
       <a href="#custom-studio" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600 flex justify-between items-center">
         <span>Custom Label Builder</span>
         <span class="px-2 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-800 rounded-full">Hot</span>
       </a>
-      <a href="#purification" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">11-Stage PureStream Technology</a>
-      <a href="#calculator" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">MOQ & Bulk Price Calculator</a>
+      <a href="#gallery" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">Gallery & Video</a>
+      <a href="#purification" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">Purification Process</a>
+      <a href="#pricing" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">MOQ & Bulk Price Calculator</a>
       <a href="#industries" data-action="click->mobile-menu#close" class="py-2 border-b border-slate-50 hover:text-sky-600">Industries Served</a>
       <div class="pt-4 flex flex-col gap-3">
+        <a href="tel:+919069332151" class="w-full bg-slate-100 text-slate-800 font-bold py-3 rounded-xl text-center">📞 Order: +91 90693 32151</a>
         <button 
           data-action="click->modal#open click->mobile-menu#close" 
           class="w-full bg-sky-600 text-white font-bold py-3 rounded-xl shadow-md text-center">

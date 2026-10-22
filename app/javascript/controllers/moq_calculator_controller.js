@@ -25,10 +25,10 @@ export default class extends Controller {
 
     // Base prices per bottle size
     const baseRates = {
-      "200ml": 7.50,
+      "250ml": 7.50,
       "500ml": 11.50,
       "1000ml": 17.00,
-      "20L": 45.00
+      "2000ml": 28.00
     }
 
     const base = baseRates[bottleSize] || 11.50

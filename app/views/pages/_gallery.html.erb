@@ -1,0 +1,40 @@
+<section id="gallery" class="py-20 bg-slate-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-bold tracking-widest text-emerald-300 uppercase bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
+        Gallery
+      </span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
+        See Neer Aqua in Action
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        From our packing floor to retail counters &mdash; a closer look at P. K. Enterprises and the Neer Aqua range.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      <div class="rounded-3xl overflow-hidden bg-black border border-slate-700 shadow-2xl">
+        <%= video_tag "neer_aqua_promo.mp4",
+            controls: true,
+            muted: true,
+            playsinline: true,
+            preload: "metadata",
+            class: "w-full h-[560px] object-contain bg-black" %>
+      </div>
+      <div class="rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+        <%= image_tag "pk_enterprises_poster.jpg",
+            alt: "P. K. Enterprises — Neer Aqua for retailers, distributors and wholesalers, 10% discount, order 9069332151",
+            loading: "lazy",
+            class: "w-full h-[560px] object-cover object-top" %>
+      </div>
+      <div class="rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+        <%= image_tag "neer_aqua_range.jpg",
+            alt: "Neer Aqua packaged drinking water at a retail counter — 250 ml, 500 ml, 1 litre, 2 litre",
+            loading: "lazy",
+            class: "w-full h-[560px] object-cover object-top" %>
+      </div>
+    </div>
+
+  </div>
+</section>

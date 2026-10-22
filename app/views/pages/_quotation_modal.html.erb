@@ -16,8 +16,8 @@
       <!-- Modal Header -->
       <div class="bg-slate-900 px-6 py-5 text-white flex items-center justify-between">
         <div>
-          <span class="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-semibold">P. K. ENTERPRISES B2B DESK</span>
-          <h3 class="text-lg font-bold text-white mt-0.5" id="modal-title">Request Batch Quotation & Sample Kit</h3>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-semibold">P. K. ENTERPRISES • NEER AQUA ORDER DESK</span>
+          <h3 class="text-lg font-bold text-white mt-0.5" id="modal-title">Request Bulk Order Quotation</h3>
         </div>
         <button type="button" 
                 data-action="click->modal#close" 
@@ -29,7 +29,7 @@
       </div>
 
       <!-- Modal Body / Form -->
-      <form action="#" method="POST" class="p-6 space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your quotation request has been received. Our B2B Corporate Desk will contact you within 2 hours with official spec sheets.'); document.querySelector('[data-modal-target=modal]').classList.add('hidden'); document.body.classList.remove('overflow-hidden');">
+      <form action="#" method="POST" class="p-6 space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your quotation request has been received. Our team will contact you shortly. For urgent orders call 9069332151.'); document.querySelector('[data-modal-target=modal]').classList.add('hidden'); document.body.classList.remove('overflow-hidden');">
         
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
@@ -49,7 +49,7 @@
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number (WhatsApp) *</label>
-            <input type="tel" required placeholder="+91 98765 43210" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+            <input type="tel" required placeholder="+91 90693 32151" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
           </div>
         </div>
 
@@ -57,10 +57,10 @@
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Bottle Size Requirement</label>
             <select data-modal-target="sizeInput" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none bg-slate-50">
-              <option value="200ml">200ml Executive Pocket</option>
-              <option value="500ml" selected>500ml HORECA Classic</option>
+              <option value="250ml">250 ml Pocket</option>
+              <option value="500ml" selected>500 ml Classic</option>
               <option value="1000ml">1 Litre Standard</option>
-              <option value="20L">20L Commercial Jar</option>
+              <option value="2000ml">2 Litre Family</option>
             </select>
           </div>
           <div>
@@ -73,6 +73,8 @@
           <label class="block text-xs font-semibold text-slate-700 mb-1">Delivery City & Special Customization Notes</label>
           <textarea data-modal-target="notesInput" rows="3" placeholder="Tell us about custom foil stamping, logo placement, or recurring delivery schedule..." class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none"></textarea>
         </div>
+
+        <p class="text-[11px] text-slate-500">Retailers, distributors &amp; wholesalers get <strong class="text-emerald-700">10% trade discount</strong>. Prefer calling? <a href="tel:+919069332151" class="text-sky-600 font-semibold">9069332151</a></p>
 
         <div class="pt-2 flex items-center justify-end gap-3">
           <button type="button" 

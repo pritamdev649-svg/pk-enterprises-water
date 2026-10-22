@@ -8,6 +8,9 @@ export default class extends Controller {
   }
 
   open(prefill = {}) {
+    if (prefill instanceof Event) {
+      prefill = { size: prefill.currentTarget?.dataset?.size }
+    }
     if (this.hasModalTarget) {
       this.modalTarget.classList.remove("hidden")
       document.body.classList.add("overflow-hidden")

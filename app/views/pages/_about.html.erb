@@ -1,0 +1,88 @@
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest text-[#5c9a3a] uppercase bg-emerald-100/70 px-3 py-1 rounded-full">
+        About P. K. Enterprises
+      </span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        A Dependable Water-Bottle Manufacturing Partner
+      </h2>
+      <p class="mt-4 text-base text-slate-600 leading-relaxed">
+        P. K. Enterprises manufactures practical, durable and commercially viable drinking-water bottles under the <strong class="text-slate-800">Neer Aqua</strong> brand &mdash; serving distributors, retailers, institutions, commercial establishments, events and other bulk users who need consistent-quality bottles in different sizes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+      <!-- Brand Image -->
+      <div class="lg:col-span-5 rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+        <%= image_tag "pk_enterprises_poster.jpg",
+            alt: "P. K. Enterprises team packing Neer Aqua packaged drinking water cartons",
+            class: "w-full h-full max-h-[640px] object-cover object-top" %>
+      </div>
+
+      <!-- Vision, Mission -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+        <div class="p-7 rounded-3xl bg-gradient-to-br from-[#0a4f66] to-sky-800 text-white shadow-md">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-300">Our Vision</span>
+          <p class="mt-2 text-lg font-semibold leading-relaxed">
+            To establish P. K. Enterprises as a dependable and scalable water-bottle manufacturing enterprise, recognized for consistent quality, competitive pricing, reliable supply and customer-focused manufacturing.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-slate-50 border border-slate-100">
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Our Mission</span>
+          <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
+            <li class="flex gap-2"><span class="text-[#5c9a3a] font-bold">✓</span> Manufacture water bottles with consistent quality and finish.</li>
+            <li class="flex gap-2"><span class="text-[#5c9a3a] font-bold">✓</span> Increase production capacity in line with market demand.</li>
+            <li class="flex gap-2"><span class="text-[#5c9a3a] font-bold">✓</span> Maintain competitive pricing through efficient manufacturing.</li>
+            <li class="flex gap-2"><span class="text-[#5c9a3a] font-bold">✓</span> Build a reliable supply network for distributors, retailers and institutions.</li>
+            <li class="flex gap-2"><span class="text-[#5c9a3a] font-bold">✓</span> Introduce product variations based on market requirements.</li>
+            <li class="flex gap-2"><span class="text-[#5c9a3a] font-bold">✓</span> Grow through technology, working capital and systematic market expansion.</li>
+          </ul>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-white border border-sky-100 shadow-xs">
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Why Choose Us</span>
+          <p class="mt-1 text-base font-extrabold text-slate-900">&ldquo;Reliable Manufacturing. Consistent Quality. Competitive Supply.&rdquo;</p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+            <span class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-800">Manufacturing-focused model</span>
+            <span class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-800">Bulk order capability</span>
+            <span class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-800">Competitive pricing</span>
+            <span class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-800">Flexible specifications</span>
+            <span class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-800">Fast repeat orders</span>
+            <span class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-800">Consistent product quality</span>
+            <span class="px-3 py-1.5 rounded-full bg-sky-50 text-sky-800">Direct B2B engagement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Approach -->
+    <div class="mt-16">
+      <h3 class="text-center text-2xl font-extrabold text-slate-900">Our Approach</h3>
+      <p class="text-center text-sm text-slate-500 mt-1">A capacity-led and relationship-driven growth strategy</p>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <% [
+          ["Production First", "Strong manufacturing infrastructure before aggressive sales expansion."],
+          ["Bulk-Order Focus", "Priority to distributors, institutions and commercial customers with repeat volumes."],
+          ["Cost Efficiency", "Smart production planning and raw-material procurement for competitive pricing."],
+          ["Product Flexibility", "Bottle sizes and specifications developed according to real market demand."],
+          ["Repeat Business", "Long-term customer relationships instead of one-time orders."],
+          ["Regional Expansion", "A growing distributor and dealer network in new markets."]
+        ].each_with_index do |(title, text), i| %>
+          <div class="p-6 rounded-2xl bg-slate-50 hover:bg-sky-50/60 transition-colors">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-8 h-8 rounded-lg bg-[#0a4f66] text-white font-bold flex items-center justify-center text-sm"><%= i + 1 %></span>
+              <h4 class="text-base font-bold text-slate-900"><%= title %></h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed"><%= text %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</section>
